@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 367.06 128.56">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #063151;
+        font-family: AlbertSansRoman-Black, 'AlbertSansRoman Black';
+        font-size: 60.42px;
+        font-variation-settings: ';
+        font-weight: 800;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        letter-spacing: -.08em;
+      }
+
+      .cls-4 {
+        fill: #d63a3e;
+        font-family: Arial-BoldMT, Arial;
+        font-size: 19.7px;
+        font-weight: 700;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.02em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1" data-name="Layer 1">
+    <rect class="cls-2" width="367.06" height="128.56" rx="12" ry="12"/>
+    <text class="cls-1" transform="translate(75.09 73.39)"><tspan x="0" y="0">DON</tspan><tspan class="cls-3" x="121.62" y="0">A</tspan><tspan x="153.95" y="0">TE</tspan></text>
+    <text class="cls-4" transform="translate(87.39 101.61)"><tspan x="0" y="0">B</tspan><tspan class="cls-6" x="14.23" y="0">Y</tspan><tspan class="cls-5" x="27.01" y="0" xml:space="preserve"> CLICKING HERE</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,58 @@
+---
+import Picture from './Picture.astro';
+---
+
+<section class="Form">
+  <div class="grid">
+    <Picture img="couple_1" alt="Elvira Meraz" ext="jpg" />
+    <form action="" id="contact-form">
+      <div class="input-group">
+        <input
+          required=""
+          type="text"
+          name="text"
+          autocomplete="off"
+          class="input"
+        />
+        <label class="user-label">First Name*</label>
+      </div>
+      <div class="input-group">
+        <input
+          required=""
+          type="text"
+          name="text"
+          autocomplete="off"
+          class="input"
+        />
+        <label class="user-label">Last Name*</label>
+      </div>
+      <div class="input-group">
+        <input
+          required=""
+          type="text"
+          name="text"
+          autocomplete="off"
+          class="input"
+        />
+        <label class="user-label">Email Address*</label>
+      </div>
+      <div class="input-group">
+        <input
+          required=""
+          type="text"
+          name="text"
+          autocomplete="off"
+          class="input"
+        />
+        <label class="user-label">Phone Number*</label>
+      </div>
+      <button class="btn btn-submit">Count me in!</button>
+    </form>
+  </div>
+</section>
+<script>
+  const form = document.getElementById('contact-form');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+  });
+</script>

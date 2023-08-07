@@ -1,0 +1,22 @@
+.main-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lime;
+  img{
+    width: 230px;
+  }
+
+  .main-menu, .social, .main-nav{
+    display: flex;
+    align-items: center;
+    a{
+      text-transform: uppercase;
+    }
+  }
+  .social{
+    li,a{
+      width: get-vw(50px);
+    }
+  }
+}

@@ -1,0 +1,40 @@
+---
+import { socialNentworsksItems } from '../utilitis/social';
+import Social from './Social.astro';
+const email: string = 'info@sipamatitan.mx';
+---
+
+<footer class="main-footer">
+  <div class="footer-top">
+    <a href="#">Contact us</a>
+  </div>
+  <div class="footer-center">
+    <div class="footer-center__title">
+      <h2>Elvira Meraz</h2>
+      <h3>ONE Family, ONE Community, ONE Future</h3>
+      <Social />
+    </div>
+    <div class="footer-center__data">
+      <div class="footer-center__aboutus">
+        <ul class="aboutus-list">
+          <li>
+            Km 32 Carretera <br />
+            Guadalajara – Tequila
+          </li>
+          <li><a href=`mailto:${email}`>{email}</a></li>
+        </ul>
+      </div>
+      <div class="footer-center__social">
+        <ul class="footer-center__social-list">
+          {
+            socialNentworsksItems.map((item: any) => (
+              <li>
+                <a href={item.url}>{item.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
