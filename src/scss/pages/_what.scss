@@ -1,0 +1,17 @@
+.What{
+  position: relative;
+  padding-top: get-vw(469px);
+  padding-left: get-vw(186px);
+  padding-right: get-vw(261px);
+  &__grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    background-color: lime;
+    img{
+      max-width: get-vw(515px) ;
+      align-self: self-end;
+    }
+  }
+}

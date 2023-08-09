@@ -9,9 +9,12 @@ $rot: 30deg;
 $linear-gradient: linear-gradient(to right, #3264f5 2%, #7004bc 82%);
 
 :root{
-  --header-height: 75px;
+  --header-height: 100px;
+  @include from(m){
+    --header-height:150px;
+  }
   @include from (l){
-    --header-height: 100px;
+    --header-height: #{get-vw(240px)};
   }
 }
 $z-back: -10;
@@ -33,10 +36,13 @@ $z-modal: 1000;
   --social-size: 2em;
   --animateDiration: 0.5s;
   --body-bg: #{$body-bg};
-  --color-main: #2a6091;
+  --color-main: #051A35;
+  // --color-main-rgb:5,26,53;
+    // rgb(0, 20, 51)
+  --color-main-rgb:0,20,51;
   --color-main-dark: #0936B8;
   --color-main-hover: #{darken(#2a6091, 10)};
-  --color-second: #f021b6;
+  --color-second: #BA2940;
   --color-second-hover: #{darken(#f021b6, 15)};
   --color-third: #7004BC;
   --color-third-hover: #{darken(#7004BC, 15)};

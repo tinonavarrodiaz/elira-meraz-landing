@@ -3,12 +3,13 @@ interface Props {
   img: string;
   alt: string;
   ext: string;
+  className?: string;
 }
 
-const { img, alt, ext } = Astro.props;
+const { img, alt, ext, className } = Astro.props;
 ---
 
-<picture>
+<picture class={className}>
   <source srcset={`/img/${img}.${ext}`} media="(max-width: 1920px)" /><source
     srcset={`/img/${img}.webp`}
     type="image/webp"

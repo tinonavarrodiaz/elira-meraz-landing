@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header className="main-header">
       <img src="/img/logo.svg" alt="Elvira Meraz Logo" />
-      <nav className="main-nav">
+      <nav className={`main-nav`}>
         <Hamburger active={active} action={ToggleMenuFunction} />
         <Menu active={active}/>
       </nav>

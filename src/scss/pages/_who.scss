@@ -1,0 +1,47 @@
+.Who{
+  padding: 3em 1em;
+  margin-bottom: 0 !important;
+  @include from(lg) {
+      padding: get-vw(160px) get-vw(200px) get-vw(186px);
+  }
+  p{
+    color: var(--color-main)
+  }
+  h2{
+    font-family: var(--poppins);
+    text-align: center;
+    font-size: 3em;
+    color: var(--color-main);
+    line-height: 1em;
+    margin-bottom: 3rem;
+    @include from(lg){
+      font-size: get-vw(160px);
+      line-height: 1;
+      margin-bottom: get-vw(115px);
+    }
+  }
+  .grid-secction{
+    @include from(lg){
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      column-gap: get-vw(60px);
+    }
+  }
+  p{
+    font-size: 16px;
+    text-align: justify;
+  }
+  .column{
+    @include from(lg){
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    &:last-child{
+      justify-content: start;
+    }
+    p:last-child{
+      margin-bottom: 0 !important;
+    }
+  }
+}

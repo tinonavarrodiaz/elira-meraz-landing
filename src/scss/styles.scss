@@ -51,6 +51,15 @@ $legacy : true; // Soporte para versiones antiguas
 @import "components/form";
 
 
+@import "pages/pages";
+@import "pages/top";
+@import "pages/vote";
+@import "pages/who";
+@import "pages/why";
+@import "pages/what";
+
+
+
 // Utilities (hacks)
 // Todos los hacks que hayas necesitado para solucionar conflictos
 // o resolver situaciones extremas. Se espera poder mejorarlos luego.

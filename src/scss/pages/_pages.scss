@@ -1,0 +1,86 @@
+
+@function star($img, $total){
+  $space: 7.5%;
+  $url: url($img) 0 center / 4.3% no-repeat;
+
+  @for $i from 1 through $total{
+    $url : '#{$url}, url(#{$img}) #{$i*$space} center / 4.3% no-repeat'
+  }
+  @return unquote($url);
+
+}
+.stars-container{
+  $stop1: 5.561375vw;
+  $stop2: 6.67vw;
+  position: relative;
+  // background-color: lime;
+  aspect-ratio: 1920/184;
+  background: linear-gradient(var(--color-main) $stop1, #fff $stop1, #fff $stop2, var(--color-second) $stop2);
+  .stars{
+    position: absolute;
+    width: 90%;
+    height: $stop1;
+    background: star('/star.svg', 13);
+    // background-size: 4.5%;
+    // background-position: left center;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @include from(lg){
+      background: star('/star.svg', 13);
+
+    }
+  }
+}
+.separator2{
+  aspect-ratio: 1000/80;
+  background: linear-gradient(var(--color-main) 50%, var(--color-second) 50%);
+  @include from(lg){
+    aspect-ratio: 1920/80;
+  }
+}
+.elvira-separator{
+  aspect-ratio: 1920 / 805;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1.5em 1.5em 0 0;
+  pucture, img{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 0;
+    transform: translateY(-48%);
+  }
+}
+.star-grid{
+  $stop1: 58.1%;
+  $stop2: 70%;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  column-gap: 2px;
+  background: linear-gradient(#000 $stop1, white $stop1,
+    white $stop2,
+    var(--color-second) $stop2);
+  margin-top: 3em;
+  margin-bottom: 1.5em;
+  @include from(lg){
+    margin-top: get-vw(190px);
+    margin-bottom: get-vw(32px);
+  }
+  .stars-container1{
+    aspect-ratio: 960/130;
+    background: linear-gradient(var(--color-main) $stop1, white $stop1, white $stop2, var(--color-second) $stop2);
+    position: relative;
+  }
+  .stars{
+    position: absolute;
+    width: 90%;
+    height: $stop1;
+    background: star('/star.svg', 13);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}

@@ -4,15 +4,19 @@
   @return math.div($px, 16px) * 1rem;
 }
 @import './fonts';
-@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;700&family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;700&family=Montserrat:wght@700');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;700&family=Montserrat:wght@700&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,700&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 $albert: 'Albert Sans', sans-serif;
 $montserrat: 'Montserrat', sans-serif;
 $open : 'Open Sans', sans-serif;
-$poppins: 'poppins';
-$agenda: 'agenda';
-$agenda: 'agenda';
-$minion: 'minion';
+$poppins: 'poppins', sans-serif;
+$agenda: 'agenda', sans-serif;
+$agenda: 'agenda', sans-serif;
+$minion: 'minion', sans-serif;
+$arno: 'arno', sans-serif;
 $heading-font: $poppins;
 $body-font: $open;
 
@@ -28,10 +32,11 @@ $body-font: $open;
   --albert: 'Albert Sans', sans-serif;
   --montserrat: 'Montserrat', sans-serif;
   --open : 'Open Sans', sans-serif;
-  --poppins: 'poppins';
-  --agenda: 'agenda';
-  --agenda: 'agenda';
-  --minion: 'minion';
+  --poppins: 'poppins', sans-serif;
+  --agenda: 'agenda', sans-serif;
+  --agenda: 'agenda', sans-serif;
+  --minion: 'minion', sans-serif;
+  --arno: 'arno', sans-serif;
 
   // Font sizes
   --h1-font-size: #{rem(24px)};

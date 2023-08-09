@@ -22,8 +22,29 @@
   }
 }
 
-// .toggle-menu{
-//   @include from(l){
-//     display: none;
-//   }
-// }
+.toggle-menu{
+  @include from(l){
+    display: none;
+  }
+}
+
+button{
+  cursor: pointer;
+}
+.btn{
+  line-height: 2.5em;
+  padding: 0 3em ;
+  border-radius: 2em;
+  &.line{
+    border: 1px solid #000;
+    background-color: transparent;
+
+  }
+  &.lightblue{
+    border-color: rgba(lightblue,.3);
+    color: white;
+    &:hover{
+      background-color: rgba(lightblue, .3);
+    }
+  }
+}

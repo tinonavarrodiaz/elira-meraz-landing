@@ -1,0 +1,36 @@
+.Vote{
+  padding-top: 2em;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  @include from(lg){
+    padding-top: get-vw(165px);
+    padding-left: get-vw(200px);
+    padding-right: get-vw(200px)
+  }
+  h2{
+    font-size: 1.3em;
+    line-height: 1;
+    margin-bottom: 2em;
+    @include from(lg){
+      font-size: get-vw(55px);
+      margin-bottom: get-vw(106px);
+    }
+  }
+  p{
+    color: #063151;
+    @include from(lg){
+      font-size: get-vw(26px);
+      margin-bottom: get-vw(60px);
+    }
+    &.bold{
+      font-weight: 700;
+      margin-top: get-vw(120px);
+
+    }
+    &.red{
+      margin-top: get-vw(60px);
+      color: var(--color-second); //BA2940
+    }
+  }
+}
