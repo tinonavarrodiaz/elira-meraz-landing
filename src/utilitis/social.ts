@@ -11,8 +11,8 @@ export const socialNentworsksItems: Props[] = [
     url: "#"
   },
   {
-    img: '/twitter.svg',
-    title: "Twitter",
+    img: '/x.svg',
+    title: "X",
     url: "#"
   },
   {

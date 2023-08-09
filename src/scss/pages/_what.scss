@@ -1,17 +1,83 @@
 .What{
   position: relative;
-  padding-top: get-vw(469px);
+  padding-top: get-vw(400px);
   padding-left: get-vw(186px);
-  padding-right: get-vw(261px);
+  padding-right: get-vw(220px);
+  padding-bottom: get-vw(347px);
+  @include to(lg) {
+    padding-right: get-vw(186px);
+    margin-bottom: 4em;
+  }
+  @include from(lg){
+    background: url('/palm.svg') bottom / contain no-repeat;
+
+  }
   &__grid{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 55% 45%;
     align-items: center;
     justify-content: center;
-    background-color: lime;
+    @include to(lg){
+      display: block;
+    }
+  }
+  &__img{
+    @include from(lg){
+      display: flex;
+      justify-content: flex-end;
+    }
     img{
-      max-width: get-vw(515px) ;
-      align-self: self-end;
+      max-width: get-vw(480px);
+      @include to(lg){
+        margin: 0 auto;
+        max-width: 45%;
+      }
+    }
+  }
+  .title{
+    text-align: left;
+    font-size: get-vw(140px);
+    line-height: 1;
+    @include to(lg) {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+  }
+  h3{
+    font-size: get-vw(25px);
+    text-align: left;
+    padding: 0;
+    padding-left: 1em;
+    margin-bottom: 0;
+    @include to(lg) {
+      font-size: 1em;
+    }
+  }
+  p, ul{
+    font-size: get-vw(23px);
+    @include to(lg) {
+      font-size: .9em;
+      margin-bottom: 2em;
+    }
+    li{
+      padding-left: 1em;
+      position: relative;
+      @include to(lg) {
+        line-height: 1;
+        margin-bottom: .5em;
+      }
+      &::before{
+        content: '';
+        width: .3em;
+        height: .3em;
+        border-radius: 50%;
+        background: var(--color-second);
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateX(100%) translateY(-50%);
+      }
     }
   }
 }
