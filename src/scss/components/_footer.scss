@@ -1,3 +1,108 @@
 .main-footer{
+  --px: 2em;
+  --py: 3em;
+  @include from(lg){
+    --px: #{get-vw(150px)};
+    --py: #{get-vw(100px)};
+  }
+  background: var(--color-main);
+  color: #fff;
+  padding: var(--py) var(--px);
+  .footer-top{
+    display: flex;
+    justify-content: flex-end;
+    a{
+      font-family: var(--agenda);
+      text-transform: uppercase;
+      // text-decoration: underline;
+      letter-spacing: 2px;
+      font-weight: 300;
+      display: inline-block;
+      position: relative;
+      @include from(lg){
+        font-size: get-vw(26px);
+      }
+      &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        bottom: 3px;
+        left: 0;
+        background: rgba(lightblue,.3);
+        // opacity: .5;
+        // background: red;
+      }
+    }
+  }
+}
 
+.footer-center{
+  --bdc: #{rgba(lightblue,.3)};
+  --fz-title: 2.5em;
+  --p: 4em;
+  --mt: 2em;
+  @include from(lg){
+    --fz-title: #{get-vw(62px)};
+    --fz-text: #{get-vw(23px)};
+    --p: #{get-vw(100px)};
+    --mt: #{get-vw(70px)};
+    --pr: #{get-vw(70px)};
+  }
+  // background-color: rgba(lime,.1);
+  margin-top: var(--mt);
+  padding: var(--p) 0 ;
+  border: 1px solid var(--bdc);
+  border-right: none;
+  border-left: none;
+  text-align: center;
+  @include from(lg){
+    display: flex;
+    justify-content: space-between;
+    padding-right: var(--pr);
+  }
+  h2{
+    font-family: var(--arno);
+    text-transform: uppercase;
+    font-size: var(--fz-title);
+    line-height: 1;
+    margin-bottom: 0;
+  }
+  h3{
+    font-family: var(--arno);
+    font-size: var(--fz-text);
+    margin-bottom: 3em;
+    @include from(lg){
+      margin-bottom: 0;
+
+    }
+  }
+  ul{
+    display: flex;
+    justify-content: center;
+    column-gap: 10%;
+    font-family: var(--agenda);
+    @include from(lg){
+      flex-direction: column;
+      justify-content: flex-start;
+      row-gap: .3em;
+    }
+    li{
+      order: 1;
+      &:nth-child(2){
+        order: 0;
+      }
+
+    }
+    a{
+      display: block;
+      width: 100%;
+      // background: darkgreen;
+      text-align: left;
+      @include from(lg){
+        font-size: get-vw(20px);
+      }
+    }
+  }
 }

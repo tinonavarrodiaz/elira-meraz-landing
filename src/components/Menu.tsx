@@ -11,8 +11,8 @@ const Menu = ({ active }: Props) => {
   return (
     <ul className={`main-menu ${active ? 'is-active' : ''}`}>
       {
-        menuItems.map((item: any) => (
-          <li className="main-menu__item">
+        menuItems.map((item: any, i:number) => (
+          <li key={i} className="main-menu__item">
             <a className="main-menu__link" href={`#${item.title}`}>{item.title}</a>
           </li>
         ))
