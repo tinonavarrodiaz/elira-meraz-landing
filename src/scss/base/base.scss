@@ -19,6 +19,9 @@ body {
   position: relative;
   overflow-x: hidden;
   font-weight: 600;
+  @include to(m){
+    font-size: 15px;
+  }
 }
 
 img {

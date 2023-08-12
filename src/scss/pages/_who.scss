@@ -1,5 +1,5 @@
 .Who{
-  padding: 3em 1em;
+  padding: 3em 2em;
   margin-bottom: 0 !important;
   @include from(lg) {
       padding: get-vw(133px) get-vw(160px) get-vw(205px);
@@ -28,7 +28,6 @@
     }
   }
   p{
-    font-size: 16px;
     text-align: justify;
     font-weight: 600;
     color: var(--color-main);

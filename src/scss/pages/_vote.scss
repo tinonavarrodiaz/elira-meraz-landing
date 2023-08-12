@@ -1,9 +1,8 @@
 .Vote{
   padding-top: 3em;
   text-align: center;
-  padding-left: 1em !important;
-  padding-right: 1em;
-  padding-left: 3em;
+  padding-left: 2em ;
+  padding-right: 2em;
   margin-bottom: 0 !important;
   @include from(lg){
     padding-top: get-vw(165px);
@@ -24,14 +23,16 @@
     color: #063151;
     font-weight: 600;
     line-height: 1.4em;
+    text-align: justify;
+      text-align-last: center;
+      br{
+        display: none;
+      }
     @include from(lg){
       font-size: get-vw(26px);
       margin-bottom: get-vw(50px);
       text-align: justify;
       text-align-last: center;
-        br{
-          display: none;
-        }
     }
     &.bold{
       font-weight: 700;
