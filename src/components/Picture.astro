@@ -11,12 +11,12 @@ const { img, alt, ext, className, aos } = Astro.props;
 ---
 
 <picture class={className} data-aos={aos}>
-  <source srcset={`/img/${img}.${ext}`} media="(max-width: 1920px)" /><source
+  <source srcset={`/img/${img}.${ext}`} media="(max-width: 1500px)" /><source
     srcset={`/img/${img}.webp`}
     type="image/webp"
-    media="(max-width: 1920px)"
+    media="(max-width: 1500px)"
   />
-  <source srcset={`/img/${img}.${ext}`} media="(max-width: 1920px)" />
+  <source srcset={`/img/${img}.${ext}`} media="(max-width: 1500px)" />
   <source
     srcset={`/img/${img}@2x.webp`}
     type="image/webp"
