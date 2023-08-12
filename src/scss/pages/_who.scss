@@ -2,34 +2,42 @@
   padding: 3em 1em;
   margin-bottom: 0 !important;
   @include from(lg) {
-      padding: get-vw(160px) get-vw(200px) get-vw(186px);
+      padding: get-vw(133px) get-vw(160px) get-vw(205px);
   }
   p{
-    color: var(--color-main)
+    color: var(--color-main);
   }
   h2{
     font-family: var(--poppins);
     text-align: center;
-    font-size: 3em;
+    font-size: 4.5em;
     color: var(--color-main);
     line-height: 1em;
     margin-bottom: 3rem;
     @include from(lg){
-      font-size: get-vw(160px);
+      font-size: get-vw(200px);
       line-height: 1;
-      margin-bottom: get-vw(115px);
+      margin-bottom: get-vw(80px);
     }
   }
   .grid-secction{
     @include from(lg){
       display: grid;
       grid-template-columns: repeat(3,1fr);
-      column-gap: get-vw(60px);
+      column-gap: get-vw(48px);
     }
   }
   p{
     font-size: 16px;
     text-align: justify;
+    font-weight: 600;
+    color: var(--color-main);
+    line-height: 1.1;
+    font-weight: 600;
+    @include from(lg){
+      font-size: get-vw(24px);
+    }
+
   }
   .column{
     @include from(lg){
@@ -39,6 +47,9 @@
     }
     &:last-child{
       justify-content: start;
+      p:last-child {
+          font-weight: 700;
+        }
     }
     p:last-child{
       margin-bottom: 0 !important;

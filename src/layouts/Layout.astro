@@ -17,24 +17,111 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <link
+      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+      rel="stylesheet"
+      media="(min-width:1024px)"
+    />
     <title>{title}</title>
   </head>
+  <Header client:load />
   <body>
-    <Header client:load />
     <slot />
     <Footer />
   </body>
+
+  <script>
+    const screemWidth = Math.max(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0
+    );
+    const getScrollBarWidth = () =>
+      window.innerWidth -
+      document.documentElement.getBoundingClientRect().width;
+    document.documentElement.style.setProperty(
+      '--screenWidth',
+      `${screemWidth}`
+    );
+    document.documentElement.style.setProperty(
+      '--scrollbarWidth',
+      `${getScrollBarWidth()}px`
+    );
+    //@ts-ignore
+  </script>
+  <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script is: inline>
+    function isMobile() {
+      return (
+        navigator.userAgent.match(/Android/i) ||
+        navigator.userAgent.match(/webOS/i) ||
+        navigator.userAgent.match(/iPhone/i) ||
+        navigator.userAgent.match(/iPod/i) ||
+        navigator.userAgent.match(/iPad/i) ||
+        navigator.userAgent.match(/BlackBerry/i)
+      );
+    }
+    if (!isMobile()) {
+      AOS.init({
+        startEvent: 'load',
+        easing: 'ease-out-back',
+        duration: 850,
+        // startEvent: 'DOMContentLoaded',
+        useClassNames: true,
+        // once: true,
+      });
+    }
+  </script>
+
+  <script is:inline>
+    const header = document.querySelector('#Header');
+    const headerHeight = header.clientHeight;
+    const toggleMenu = document.querySelector('.toggle-menu');
+    header.addEventListener('click', (e) => {
+      const target = e.target;
+      if (target.classList.contains('data-link')) {
+        e.preventDefault();
+        if (target.classList.contains('logo')) {
+          window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+          });
+        } else {
+          if (toggleMenu) toggleMenu.click();
+          const targetElement = document.querySelector(`${target.hash}`);
+          window.scroll({
+            top: targetElement.offsetTop - headerHeight,
+            left: 0,
+            behavior: 'smooth',
+          });
+        }
+      }
+    });
+    window.addEventListener('scroll', (e) => {
+      const sTop = scrollY;
+      if (sTop >= headerHeight) {
+        header.classList.add('fixed');
+        document.documentElement.style.setProperty(
+          '--header-height',
+          `${headerHeight / 2}px`
+        );
+        if (window.matchMedia('(max-width: 1024px)')) {
+          document.documentElement.style.setProperty(
+            '--header-height',
+            `${headerHeight * 0.75}px`
+          );
+        }
+      } else {
+        header.classList.remove('fixed');
+        document.documentElement.style.setProperty(
+          '--header-height',
+          `${headerHeight}px`
+        );
+      }
+    });
+    // document.documentElement.style.setProperty(
+    //   '--hraderHeightComp',
+    //   `${headerHeight * 1.5}px`
+    // );
+  </script>
 </html>
-<script>
-  const screemWidth = Math.max(
-    document.documentElement.clientWidth || 0,
-    window.innerWidth || 0
-  );
-  const getScrollBarWidth = () =>
-    window.innerWidth - document.documentElement.getBoundingClientRect().width;
-  document.documentElement.style.setProperty('--screenWidth', `${screemWidth}`);
-  document.documentElement.style.setProperty(
-    '--scrollbarWidth',
-    `${getScrollBarWidth()}px`
-  );
-</script>

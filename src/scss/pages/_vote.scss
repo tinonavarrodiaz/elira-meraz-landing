@@ -1,12 +1,15 @@
 .Vote{
-  padding-top: 2em;
+  padding-top: 3em;
   text-align: center;
-  padding-left: 1em;
+  padding-left: 1em !important;
   padding-right: 1em;
+  padding-left: 3em;
+  margin-bottom: 0 !important;
   @include from(lg){
     padding-top: get-vw(165px);
-    padding-left: get-vw(200px);
-    padding-right: get-vw(200px)
+    padding-left: get-vw(190px) !important;
+    padding-right: get-vw(190px);
+    padding-bottom: get-vw(130px);
   }
   h2{
     font-size: 1.3em;
@@ -14,22 +17,36 @@
     margin-bottom: 2em;
     @include from(lg){
       font-size: get-vw(55px);
-      margin-bottom: get-vw(106px);
+      margin-bottom: get-vw(100px);
     }
   }
   p{
     color: #063151;
+    font-weight: 600;
+    line-height: 1.4em;
     @include from(lg){
       font-size: get-vw(26px);
-      margin-bottom: get-vw(60px);
+      margin-bottom: get-vw(50px);
+      text-align: justify;
+      text-align-last: center;
+        br{
+          display: none;
+        }
     }
     &.bold{
       font-weight: 700;
-      margin-top: get-vw(120px);
+      text-align: center;
+      @include from(lg){
+        margin-top: get-vw(100px);
+        font-size: get-vw(33px);
+        br{
+          display: block;
+        }
+      }
 
     }
     &.red{
-      margin-top: get-vw(60px);
+      margin-top: get-vw(50px);
       color: var(--color-second); //BA2940
     }
   }

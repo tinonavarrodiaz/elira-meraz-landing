@@ -9,13 +9,17 @@
   @include from(lg){
     margin-bottom: get-vw(290px);
   }
+  li:before{
+    display: none !important;
+  }
   img{
     // max-width: get-vw(579px);
+
 
     @include to(lg){
       margin: 0 auto;
       margin-bottom: 2em;
-
+      max-width: 80%;
     }
     @include from(lg){
       width: 100%;
@@ -123,6 +127,7 @@ input:not(:placeholder-shown), input:focus{
   }
 }
 .header-form{
+  color: var(--color-main);
   > *{
     margin-bottom: 0;
   }
@@ -145,6 +150,25 @@ input:not(:placeholder-shown), input:focus{
     font-size: 1.3em;
     @include from(lg){
       font-size: get-vw(28px);
+    }
+  }
+}
+@include to(lg){
+  .header-form{
+
+    h2{
+      text-align: center;
+      margin-bottom: .5em;
+    }
+    p{
+      text-align: center;
+    }
+  }
+}
+.footer-center__social-list{
+  li{
+    &::before{
+      content: unset;
     }
   }
 }

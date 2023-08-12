@@ -2,8 +2,13 @@
   margin-bottom: 3em;
   @include from(lg){
     margin-bottom: get-vw(130px);
+    margin-top: get-vw(15px);
   }
-
+   br{
+    @include to(lg){
+      display: none;
+    }
+   }
 
   @include from(lg){
     position: relative;

@@ -1,83 +1,208 @@
-.What{
-  position: relative;
-  padding-top: get-vw(400px);
-  padding-left: get-vw(186px);
-  padding-right: get-vw(220px);
-  padding-bottom: get-vw(347px);
-  @include to(lg) {
-    padding-right: get-vw(186px);
-    margin-bottom: 4em;
-  }
-  @include from(lg){
-    background: url('/palm.svg') bottom / contain no-repeat;
-
-  }
-  &__grid{
-    display: grid;
-    grid-template-columns: 55% 45%;
-    align-items: center;
-    justify-content: center;
-    @include to(lg){
-      display: block;
-    }
-  }
-  &__img{
+@include from(lg){
+  .What{
+    position: relative;
+    color: var(--color-main);
+    margin-bottom: 0;
     @include from(lg){
-      display: flex;
-      justify-content: flex-end;
+      padding-top: get-vw(450px);
+      padding-left: get-vw(200px);
+      padding-right: get-vw(220px);
+      padding-bottom: get-vw(350px);
     }
-    img{
-      max-width: get-vw(480px);
+    &__grid{
+      display: grid;
+      grid-template-columns: get-vw(940px) 1fr;
+      column-gap: get-vw(100px);
+      align-items: center;
       @include to(lg){
-        margin: 0 auto;
-        max-width: 45%;
+        display: block;
       }
     }
-  }
-  .title{
-    text-align: left;
-    font-size: get-vw(140px);
-    line-height: 1;
-    @include to(lg) {
-      text-align: center;
-      margin-bottom: 1em;
+    .title{
+      font-family: var(--poppins);
+        font-size: 3em;
+        color: var(--color-main);
+        line-height: 1em;
+        margin-bottom: 3rem;
+
+        @include from(lg) {
+          font-size: get-vw(140px);
+          line-height: 1;
+          margin-bottom: get-vw(80px);
+        }
+
     }
-  }
-  h3{
-    font-size: get-vw(25px);
-    text-align: left;
-    padding: 0;
-    padding-left: 1em;
-    margin-bottom: 0;
-    @include to(lg) {
-      font-size: 1em;
+    p{
+      margin-bottom: get-vw(47px);
     }
-  }
-  p, ul{
-    font-size: get-vw(23px);
-    @include to(lg) {
-      font-size: .9em;
-      margin-bottom: 2em;
+    p,li{
+      font-family: var(--albert);
+      font-size: get-vw(30px);
+      line-height: 1.2;
     }
     li{
-      padding-left: 1em;
+      $size: .3em;
       position: relative;
-      @include to(lg) {
-        line-height: 1;
-        margin-bottom: .5em;
-      }
       &::before{
         content: '';
-        width: .3em;
-        height: .3em;
-        border-radius: 50%;
-        background: var(--color-second);
         display: block;
+        width: $size;
+        height: $size;
         position: absolute;
+        left: -$size;
         top: 50%;
-        left: 0;
-        transform: translateX(100%) translateY(-50%);
+        transform: translateY(-50%) translateX(-50%);
+        background: var(--color-second);
+        border-radius: 50%;
       }
+      &:nth-child(4)::before{
+        top: 0;
+        transform: translateY(150%) translateX(-50%);
+      }
+    }
+
+    &__img img{
+      max-width: 100%;
+      transform-origin: center right;
+      transform: scale(1.05);
     }
   }
 }
+@include to(lg){
+  .What{
+    position: relative;
+    color: var(--color-main);
+    margin-bottom: 0;
+    padding: 0 1em 0 1.5em;
+    padding-top: 3em;
+
+    .title{
+      font-size: 4em;
+      text-align: center;
+    }
+  }
+  p,
+  li {
+    font-family: var(--albert);
+    font-size: 1em;
+    line-height: 1.2;
+  }
+
+  li {
+    $size: .3em;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: $size;
+      height: $size;
+      position: absolute;
+      left: -$size;
+      top: 0;
+      transform: translateY(150%) translateX(-50%);
+      background: var(--color-second);
+      border-radius: 50%;
+    }
+
+    &:nth-child(4)::before {
+      top: 0;
+      transform: translateY(150%) translateX(-50%);
+    }
+  }
+}
+.What__img{
+  @include to(lg){
+    margin-top: 2em;
+    margin-bottom: 3em;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+// .What{
+//   position: relative;
+//   padding-top: get-vw(420px);
+//   padding-left: get-vw(186px);
+//   padding-right: get-vw(220px);
+//   padding-bottom: get-vw(347px);
+//   @include to(lg) {
+//     padding-right: get-vw(186px);
+//     margin-bottom: 4em;
+//   }
+//   @include from(lg){
+//     background: url('/palm.svg') bottom / contain no-repeat;
+
+//   }
+//   &__grid{
+//     display: grid;
+//     grid-template-columns: 55% 45%;
+//     align-items: center;
+//     justify-content: center;
+//     @include to(lg){
+//       display: block;
+//     }
+//   }
+//   &__img{
+//     @include from(lg){
+//       display: flex;
+//       justify-content: flex-end;
+//     }
+//     img{
+//       max-width: get-vw(480px);
+//       @include to(lg){
+//         margin: 0 auto;
+//         max-width: 45%;
+//       }
+//     }
+//   }
+//   .title{
+//     text-align: left;
+//     font-size: get-vw(140px);
+//     line-height: 1;
+//     @include to(lg) {
+//       text-align: center;
+//       margin-bottom: 1em;
+//     }
+//   }
+//   // h3{
+//   //   font-size: get-vw(25px);
+//   //   text-align: left;
+//   //   padding: 0;
+//   //   padding-left: 1em;
+//   //   margin-bottom: 0;
+//   //   @include to(lg) {
+//   //     font-size: get-vw(34px);
+//   //     margin-bottom: get-vw(50px) ;
+//   //   }
+//   // }
+//   p, ul{
+//     font-size: 1em !important;
+//     font-family: var(--albert);
+//     color: var(--color-main) !important;
+//     @include to(lg) {
+//       font-size: get-vw(34px) !important;
+//       margin-bottom: 2em;
+//     }
+//     li{
+//       padding-left: 1em;
+//       position: relative;
+//       @include to(lg) {
+//         line-height: 1;
+//         margin-bottom: .5em;
+//       }
+//       &::before{
+//         content: '';
+//         width: .3em;
+//         height: .3em;
+//         border-radius: 50%;
+//         background: var(--color-second);
+//         display: block;
+//         position: absolute;
+//         top: 50%;
+//         left: 0;
+//         transform: translateX(100%) translateY(-50%);
+//       }
+//     }
+//   }
+// }

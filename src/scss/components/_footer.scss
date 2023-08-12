@@ -4,10 +4,15 @@
   @include from(lg){
     --px: #{get-vw(150px)};
     --py: #{get-vw(100px)};
+    --pb: #{get-vw(200px)};
   }
   background: var(--color-main);
   color: #fff;
-  padding: var(--py) var(--px);
+  padding: 3em 2em;
+  @include from(lg){
+    padding: var(--py) var(--px) var(--pb);
+
+  }
   .footer-top{
     display: flex;
     justify-content: flex-end;
@@ -45,19 +50,21 @@
   --mt: 2em;
   @include from(lg){
     --fz-title: #{get-vw(62px)};
-    --fz-text: #{get-vw(23px)};
+    --fz-text: #{get-vw(24px)};
     --p: #{get-vw(100px)};
+    --pb: #{get-vw(150px)};
     --mt: #{get-vw(70px)};
     --pr: #{get-vw(70px)};
   }
   // background-color: rgba(lime,.1);
   margin-top: var(--mt);
-  padding: var(--p) 0 ;
+  padding: 2em 0 ;
   border: 1px solid var(--bdc);
   border-right: none;
   border-left: none;
   text-align: center;
   @include from(lg){
+    padding: var(--p) 0 var(--pb) !important;
     display: flex;
     justify-content: space-between;
     padding-right: var(--pr);
@@ -68,11 +75,15 @@
     font-size: var(--fz-title);
     line-height: 1;
     margin-bottom: 0;
+    @include from(lg){
+      font-size: get-vw(62px);
+    }
   }
   h3{
     font-family: var(--arno);
     font-size: var(--fz-text);
     margin-bottom: 3em;
+    line-height: 0;
     @include from(lg){
       margin-bottom: 0;
 

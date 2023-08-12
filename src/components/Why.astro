@@ -3,11 +3,11 @@ import Picture from './Picture.astro';
 import Separator3 from './Separator3.astro';
 ---
 
-<section class="Why">
+<section class="Why" id="why">
   <img class="flag" src="/flag.svg" alt="flag" />
-  <h2 class="title">WHY</h2>
+  <h2 class="title" data-aos="zoom-in">WHY</h2>
   <div class="grid">
-    <div class="text">
+    <div class="text" data-aos="fade-right">
       <p>
         This is the most<br /> consequential election in<br /> Downey’s history.
         Ballots<br />
@@ -17,26 +17,21 @@ import Separator3 from './Separator3.astro';
         will<br /> determine the future<br /> of our city.
       </p>
     </div>
-    <Picture img="boy" alt="Elvira Meraz" ext="jpg" />
+    <Picture aos="fade-left" img="boy" alt="Elvira Meraz" ext="jpg" />
   </div>
-  <h3>Over 100 District One Residents<br /> already endorse Elvira Meraz.</h3>
-  <p class="list-title">Elvira is endorsed by:</p>
-  <ul class="list">
-    <li>The Downey Coalition of former Mayors – Kirk</li>
-    <li>
-      Cartozian, Rick Rodriguez, Roger Brossmer, Keith McCarthy. Current Mayor
-    </li>
-    <li>
-      Claudia M. Frometa. Ron Kolar Owner L’abri Management. Jeremy Fitzl
-      Managing
-    </li>
-    <li>
-      Partner L'abri Management. Humberto and Vanessa Ibarra Founder of Tequila
-    </li>
-    <li>
-      Mandala. Steve Roberson Broker Century 21 Peak and life long resident.
-      Nanci
-    </li>
-    <li>Swenson School Board Member. Bobbi Samperi School Board Member.</li>
-  </ul>
+  <h3 data-aos="zoom-out">
+    Over 100 District One Residents<br /> already endorse Elvira Meraz.
+  </h3>
+  <p class="list-like" data-aos="zoom-in">Elvira is endorsed by:</p>
+  <p class="list-like" data-aos="zoom-in">
+    The Downey Coalition of former Mayors – Kirk Cartozian,<br />
+    Rick Rodriguez, Roger Brossmer, Keith McCarthy.<br />
+    Current Mayor Claudia M. Frometa.<br />
+    Ron Kolar Owner L’abri Management.<br />
+    Jeremy Fitzl Managing Partner L'abri Management.<br />
+    Humberto and Vanessa Ibarra Founder of Tequila Mandala.<br />
+    Steve Roberson Broker Century 21 Peak and life long resident.<br />
+    Nanci Swenson School Board Member.<br />
+    Bobbi Samperi School Board Member.
+  </p>
 </section>

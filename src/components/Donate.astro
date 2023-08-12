@@ -2,10 +2,12 @@
 import Picture from './Picture.astro';
 ---
 
-<section class="Donate">
-  <Picture className="Donate_img" img="elvira" ext="jpg" alt="Elvira Meraz" />
+<section class="Donate" id="donate" data-aos="zoom-in-up">
+  <Picture className="Donate__img" img="elvira" ext="jpg" alt="Elvira Meraz" />
   <div class="Donate__content">
-    <a class="btn-donate" href="#"><img src="/donate.svg" alt="donate" /></a>
+    <a class="Donate__btn" href="#"
+      ><img src="/donate.svg" alt="donate" class="Donate__btn--img" /></a
+    >
     <p>Thank you for becoming part of our campaign.</p>
   </div>
 </section>

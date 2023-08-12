@@ -2,10 +2,10 @@
 import Picture from './Picture.astro';
 ---
 
-<section class="Form">
+<section class="Form" id="support">
   <div class="Form__grid">
-    <Picture img="couple_1" alt="Elvira Meraz" ext="jpg" />
-    <form action="" id="contact-form">
+    <Picture aos="fade-right" img="couple_1" alt="Elvira Meraz" ext="jpg" />
+    <form action="" id="contact-form" data-aos="fade-left">
       <header class="header-form">
         <h2>Together we can make it possible.</h2>
         <p>Join Elvira and let’s transform Downey, united.</p>
@@ -15,60 +15,55 @@ import Picture from './Picture.astro';
       <div class="input-grid">
         <div class="input-group">
           <input
-            required=""
             type="text"
             name="firstName"
             id="firstName"
             autocomplete="off"
             class="input"
             placeholder=" "
-            required
+            pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\\s]+$"
           />
           <label class="user-label" for="firstName">First Name*</label>
         </div>
         <div class="input-group">
           <input
-            required=""
             type="text"
             name="lastName"
             id="lastName"
             autocomplete="off"
             class="input"
             placeholder=" "
-            required
+            pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\\s]+$"
           />
           <label class="user-label" for="lastName">Last Name*</label>
         </div>
       </div>
       <div class="input-group">
         <input
-          required=""
           type="email"
           name="email"
           id="email"
           autocomplete="off"
           class="input"
           placeholder=" "
-          required
+          pattern="^[a-z0-9]+(\\.[_a-z0-9]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,15})"
         />
         <label class="user-label" for="email">Email Address*</label>
       </div>
       <div class="input-group">
         <input
-          required=""
           type="text"
           name="phone"
           id="phone"
           autocomplete="off"
           class="input"
           placeholder=" "
-          required
-          pattern="^\d{1}$"
+          pattern="^[0-9]{10}"
         />
         <label class="user-label" for="phone">Phone Number*</label>
       </div>
       <footer class="footer-form">
-        <p class="text">esto es un mensaje</p>
+        <p class="text" id="msg"></p>
         <button class="btn-submit">Count me in!</button>
       </footer>
     </form>
@@ -79,7 +74,16 @@ import Picture from './Picture.astro';
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
     const target: any = e.target;
-    const $inputs = target.querySelectorAll('input[required]');
-    console.log($inputs);
+    const msg = target.querySelector('#msg');
+    const $inputs = target.querySelectorAll('input');
+    // console.log($inputs);
+    $inputs.forEach((input: any) => {
+      const pattern = input.pattern;
+      const value = input.value;
+      console.log(value, pattern);
+      input.addEventListener('change', (e: any) => {
+        console.log(e);
+      });
+    });
   });
 </script>

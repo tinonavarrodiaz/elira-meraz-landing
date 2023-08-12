@@ -6,6 +6,7 @@
   justify-content: space-between;
   padding: 0 1.5em;
   position: relative;
+  background-color: var(--body-bg);
   z-index: 5000;
   img{
     height: 80%;
@@ -17,6 +18,16 @@
   @include from(lg){
     padding: 0 get-vw(100px);
   }
+  &.fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    img{
+      width: auto;
+      height: calc(var(--header-height) * .8);
+    }
+  }
 }
 .main-menu{
   position: absolute;
@@ -24,11 +35,13 @@
   top: var(--header-height);
   left: 0;
   background-color: var(--body-bg);
+
   max-height: 0;
   overflow: hidden;
   transition: all .5s;
   overflow-y: auto;
   @include from(lg){
+    background: transparent;
     max-height: unset;
     position: relative;
     top: unset;

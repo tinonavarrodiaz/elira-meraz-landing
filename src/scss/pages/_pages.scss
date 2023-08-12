@@ -9,9 +9,20 @@
   @return unquote($url);
 
 }
+@function star10($img, $total) {
+  $space: 9.5%;
+  $url: url($img) 0 center / 5.3% no-repeat;
+
+  @for $i from 1 through $total {
+    $url : '#{$url}, url(#{$img}) #{$i*$space} center / 5.3% no-repeat'
+  }
+
+  @return unquote($url);
+
+}
 .stars-container{
-  $stop1: 5.561375vw;
-  $stop2: 6.67vw;
+  $stop1: 58%;
+  $stop2: 70%;
   position: relative;
   // background-color: lime;
   aspect-ratio: 1920/184;
@@ -28,6 +39,29 @@
     transform: translateX(-50%);
     @include from(lg){
       background: star('/star.svg', 13);
+
+    }
+  }
+}
+.stars-container10{
+  $stop1: 58%;
+  $stop2: 70%;
+  position: relative;
+  // background-color: lime;
+  aspect-ratio: 1920/261;
+  background: linear-gradient(var(--color-main) $stop1, #fff $stop1, #fff $stop2, var(--color-second) $stop2);
+  .stars{
+    position: absolute;
+    width: 90%;
+    height: $stop1;
+    background: star10('/star.svg', 10);
+    // background-size: 4.5%;
+    // background-position: left center;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @include from(lg){
+      background: star10('/star.svg', 10);
 
     }
   }

@@ -1,42 +1,100 @@
 .Donate{
-  width: 90%;
-  max-width: get-vw(1560px);
+  margin-top: 3em;
+  margin-bottom: 3em;
   position: relative;
-  margin: 0 auto;
-  margin-top: 4em;
-  margin-bottom: get-vw(330px);
-  overflow: hidden;
-  border-radius: 2em;
   @include from(lg){
-    margin-top: get-vw(283px);
-  }
-  &__img{
-    width: 100%;
-    height: 100%;
+    width: get-vw(1560px);
+    margin: get-vw(283px) auto get-vw(330px);
+    border-radius: 2em;
+    overflow: hidden;
   }
   &__content{
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    top: 50%;
-    left: get-vw(110px);
-    transform: translateY(-50%);
-  }
-  a{
-    display: block;
-    width: get-vw(368px);
-    height: auto;
-    margin: 0 auto;
-    margin-bottom: 3em;
-    img{
-      width: 100%;
+    top: 30%;
+    left: 1em;
+    @include from(lg) {
+      top: 50%;
+      left:get-vw(114px);
+      transform: translateY(-50%);
+      align-items: center;
+    }
+    p{
+      margin-bottom: 0;
+      font-family: var(--albert);
+      font-size: .8em;
+      color: #fff;
+      font-weight: 400;
+      @include from(lg){
+        font-size: get-vw(28px);
+      }
     }
   }
-  p{
-    font-family: var(--albert);
-    font-size: get-vw(27px);
-    color: white;
-    margin-bottom: 0;
+  &__btn{
+    width: 50%;
+    display: block;
+    margin-bottom: .5em;
+    @include from(lg){
+      width: get-vw(367px);
+      margin-bottom: get-vw(50px);
+    }
+    img{
+      width: 100%;
+
+    }
   }
 }
+// .Donate{
+//   width: 90%;
+//   max-width: get-vw(1560px);
+//   position: relative;
+//   margin: 0 auto;
+//   margin-top: 4em;
+//   margin-bottom: get-vw(330px);
+//   overflow: hidden;
+//   border-radius: 2em;
+//   @include to(lg){
+//     width: calc(100% - 2em);
+//     max-width: unset;
+//     background-color: lime;
+//   }
+//   @include from(lg){
+//     margin-top: get-vw(283px);
+//   }
+//   &__img{
+//     // width: 100%;
+//     // height: 100%;
+//   }
+//   &__content{
+//     position: absolute;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     top: 50%;
+//     left: get-vw(110px);
+//     transform: translateY(-50%);
+//     background-color: lime;
+//     width: auto;
+//     height: auto;
+//   }
+//   a{
+//     display: block;
+//     width: get-vw(368px);
+//     height: auto;
+//     margin: 0 auto;
+//     margin-bottom: 3em;
+//     @include to(lg){
+//       width: 50%;
+//     }
+//     img{
+//       width: 100%;
+//     }
+//   }
+//   p{
+//     font-family: var(--albert);
+//     font-size: get-vw(27px);
+//     color: white;
+//     margin-bottom: 0;
+//   }
+// }

@@ -36,13 +36,14 @@ $z-modal: 1000;
   --social-size: 2em;
   --animateDiration: 0.5s;
   --body-bg: #{$body-bg};
-  --color-main: #051A35;
+  --color-main: #1a2c48;//#051A35;
   // --color-main-rgb:5,26,53;
     // rgb(0, 20, 51)
-  --color-main-rgb:0,20,51;
+  --color-main-rgb:26,44,72;
+  // --color-main-rgb:0,20,51;
   --color-main-dark: #0936B8;
   --color-main-hover: #{darken(#2a6091, 10)};
-  --color-second: #BA2940;
+  --color-second: #dd003a;//#BA2940;
   --color-second-hover: #{darken(#f021b6, 15)};
   --color-third: #7004BC;
   --color-third-hover: #{darken(#7004BC, 15)};

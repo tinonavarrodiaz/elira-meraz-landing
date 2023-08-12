@@ -8,8 +8,8 @@ const Header = () => {
     !active ? setActive(true) : setActive(false);
   };
   return (
-    <header className="main-header">
-      <img src="/img/logo.svg" alt="Elvira Meraz Logo" />
+    <header className="main-header" id="Header">
+      <img src="/img/logo.svg" alt="Elvira Meraz Logo" className='data-link logo' data-href="top"/>
       <nav className={`main-nav`}>
         <Hamburger active={active} action={ToggleMenuFunction} />
         <Menu active={active}/>

@@ -3,7 +3,9 @@
 *:after {
   box-sizing: border-box;
 }
-
+:root{
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: $body-font;
@@ -69,3 +71,11 @@ textarea {
 ul {
   @extend %list-style;
 }
+
+section{
+  margin-bottom: 0;
+}
+
+// section:target{
+//   padding-top: ;
+// }
