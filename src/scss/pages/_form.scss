@@ -172,3 +172,27 @@ input:not(:placeholder-shown), input:focus{
     }
   }
 }
+.btn-submit{
+  height: 3em;
+  display: flex;
+  @include from(lg){
+    height: get-vw(85px);
+  }
+
+  img{
+    margin: 0 auto;
+    height: 65%;
+    width: auto;
+  }
+}
+
+.text{
+  text-align: center;
+  font-weight: 600;
+  &.success {
+    color: darkgreen;
+  }
+  &.error{
+    color: darkred;
+  }
+}

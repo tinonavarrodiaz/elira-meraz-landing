@@ -6,7 +6,7 @@ export const Social = () => {
   {
     socialNentworsksItems.map((item: any, i:number) => (
       <li key={i}>
-        <a href={item.url}>
+        <a href={item.url} target='_blank'>
           <img src={item.img} alt="" />
         </a>
       </li>

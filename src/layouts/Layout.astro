@@ -89,10 +89,12 @@ const { title } = Astro.props;
 
   <script is:inline>
     const header = document.querySelector('#Header');
-    const headerHeight = header.clientHeight;
+    let headerHeight = header.clientHeight;
     const toggleMenu = document.querySelector('.toggle-menu');
     header.addEventListener('click', (e) => {
       const target = e.target;
+      // headerHeight = header.clientHeight;
+
       if (target.classList.contains('data-link')) {
         e.preventDefault();
         if (target.classList.contains('logo')) {
@@ -103,9 +105,13 @@ const { title } = Astro.props;
           });
         } else {
           if (toggleMenu) toggleMenu.click();
+          let hashDonate = 0;
           const targetElement = document.querySelector(`${target.hash}`);
+          console.log(target.hash);
+          if (target.hash === '#donate') hashDonate = 150;
+          if (target.hash === '#support') hashDonate = -100;
           window.scroll({
-            top: targetElement.offsetTop - headerHeight - 20,
+            top: targetElement.offsetTop - headerHeight * 0.25 + hashDonate,
             left: 0,
             behavior: 'smooth',
           });
@@ -118,9 +124,10 @@ const { title } = Astro.props;
         header.classList.add('fixed');
         document.documentElement.style.setProperty(
           '--header-height',
-          `${headerHeight * 0.5}px`
+          `${headerHeight * 0.4}px`
         );
-        if (window.matchMedia('(max-width: 1024px)')) {
+        // console.log(window.matchMedia('(max-width: 1024px)').matches);
+        if (window.matchMedia('(max-width: 1024px)').matches) {
           document.documentElement.style.setProperty(
             '--header-height',
             `${headerHeight * 0.75}px`

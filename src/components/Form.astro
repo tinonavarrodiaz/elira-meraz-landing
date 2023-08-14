@@ -22,6 +22,7 @@ import Picture from './Picture.astro';
             class="input"
             placeholder=" "
             pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\\s]+$"
+            required
           />
           <label class="user-label" for="firstName">First Name*</label>
         </div>
@@ -34,6 +35,7 @@ import Picture from './Picture.astro';
             class="input"
             placeholder=" "
             pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\\s]+$"
+            required
           />
           <label class="user-label" for="lastName">Last Name*</label>
         </div>
@@ -47,6 +49,7 @@ import Picture from './Picture.astro';
           class="input"
           placeholder=" "
           pattern="^[a-z0-9]+(\\.[_a-z0-9]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,15})"
+          required
         />
         <label class="user-label" for="email">Email Address*</label>
       </div>
@@ -59,31 +62,43 @@ import Picture from './Picture.astro';
           class="input"
           placeholder=" "
           pattern="^[0-9]{10}"
+          required
         />
         <label class="user-label" for="phone">Phone Number*</label>
       </div>
       <footer class="footer-form">
         <p class="text" id="msg"></p>
-        <button class="btn-submit">Count me in!</button>
+        <button class="btn-submit" id="button">Count me in!</button>
       </footer>
     </form>
   </div>
 </section>
+
 <script>
   const form = document.getElementById('contact-form');
-  form?.addEventListener('submit', (e) => {
+  const inputMsg: any = document.getElementById('msg');
+  const button: any = document.getElementById('button');
+
+  form?.addEventListener('submit', async (e) => {
+    button.innerHTML = '<img src="/tail-spin.svg"/>';
     e.preventDefault();
     const target: any = e.target;
-    const msg = target.querySelector('#msg');
-    const $inputs = target.querySelectorAll('input');
-    // console.log($inputs);
-    $inputs.forEach((input: any) => {
-      const pattern = input.pattern;
-      const value = input.value;
-      console.log(value, pattern);
-      input.addEventListener('change', (e: any) => {
-        console.log(e);
-      });
+    const form = new FormData(target);
+    console.log(form.get('firstName'));
+    const res = await fetch('http://elvirafordowney.com/send/send.php', {
+      method: 'post',
+      body: form,
     });
+    const data = await res.json();
+    console.log(data.msg);
+    if (data.code === 200) {
+      button.innerHTML = 'Count me in!';
+      inputMsg.classList.remove('error');
+      inputMsg.classList.add('success');
+    } else {
+      inputMsg.classList.remove('success');
+      inputMsg.classList.add('error');
+    }
+    inputMsg.innerText = `${data.msg}`;
   });
 </script>

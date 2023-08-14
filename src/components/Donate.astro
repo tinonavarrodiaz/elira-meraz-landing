@@ -3,9 +3,14 @@ import Picture from './Picture.astro';
 ---
 
 <section class="Donate" id="donate" data-aos="zoom-in-up">
-  <Picture className="Donate__img" img="elvira" ext="jpg" alt="Elvira Meraz" />
+  <div class="Donate__img">
+    <Picture img="elvira" ext="jpg" alt="Elvira Meraz" />
+  </div>
   <div class="Donate__content">
-    <a class="Donate__btn" href="#"
+    <a
+      class="Donate__btn"
+      target="_blank"
+      href="https://donorbox.org/elvira-meraz-for-council-district-1-2023?language=en"
       ><img src="/donate.svg" alt="donate" class="Donate__btn--img" /></a
     >
     <p>Thank you for becoming part of our campaign.</p>

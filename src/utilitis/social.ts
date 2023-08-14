@@ -8,7 +8,7 @@ export const socialNentworsksItems: Props[] = [
   {
     img: '/facebook.svg',
     title: "Facebook",
-    url: "#"
+    url: "https://www.facebook.com/profile.php?id=100089639265405&mibextid=LQQJ4d"
   },
   {
     img: '/x.svg',
@@ -18,6 +18,6 @@ export const socialNentworsksItems: Props[] = [
   {
     img: '/instagram.svg',
     title: "Instagram",
-    url: "#"
+    url: "https://www.instagram.com/elvirafordowney"
   },
 ]

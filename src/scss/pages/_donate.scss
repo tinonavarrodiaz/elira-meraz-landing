@@ -1,10 +1,13 @@
 .Donate{
-  margin-top: 3em;
-  margin-bottom: 3em;
+  padding-top: 3em;
+  padding-bottom: 3em;
   position: relative;
   @include from(lg){
     width: get-vw(1560px);
-    margin: get-vw(283px) auto get-vw(330px);
+    margin: 0 auto ;
+    padding: get-vw(283px) 0 get-vw(330px);
+  }
+  &__img{
     border-radius: 2em;
     overflow: hidden;
   }
