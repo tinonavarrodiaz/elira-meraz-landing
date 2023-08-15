@@ -3,11 +3,12 @@ import Picture from './Picture.astro';
 import Separator3 from './Separator3.astro';
 ---
 
-<section class="Why" id="why" data-aos="zoom-in">
+<section class="Why">
   <img class="flag" src="/flag.svg" alt="flag" />
-  <h2 class="title">WHY</h2>
+  <div id="why"></div>
+  <h2 class="title" data-aos="fade-down">WHY</h2>
   <div class="grid">
-    <div class="text">
+    <div class="text" data-aos="fade-right">
       <p>
         This is the most<br /> consequential election in<br /> Downey’s history.
         Ballots<br />
@@ -17,13 +18,13 @@ import Separator3 from './Separator3.astro';
         will<br /> determine the future<br /> of our city.
       </p>
     </div>
-    <Picture img="boy" alt="Elvira Meraz" ext="jpg" />
+    <Picture img="boy" alt="Elvira Meraz" ext="jpg" aos="fade-left" />
   </div>
-  <h3 data-aos="zoom-out">
+  <h3 data-aos="fade-left">
     Over 100 District One Residents<br /> already endorse Elvira Meraz.
   </h3>
-  <p class="list-like" data-aos="zoom-in">Elvira is endorsed by:</p>
-  <p class="list-like" data-aos="zoom-in">
+  <p class="list-like" data-aos="fade-right">Elvira is endorsed by:</p>
+  <p class="list-like" data-aos="fade-right">
     The Downey Coalition of former Mayors – Kirk Cartozian,<br />
     Rick Rodriguez, Roger Brossmer, Keith McCarthy.<br />
     Current Mayor Claudia M. Frometa.<br />

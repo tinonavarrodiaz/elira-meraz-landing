@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 :root{
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -79,6 +79,7 @@ section{
   margin-bottom: 0;
 }
 
-// section:target{
-//   padding-top: ;
-// }
+:target{
+  height: 100px;
+  background-color: lime;
+}

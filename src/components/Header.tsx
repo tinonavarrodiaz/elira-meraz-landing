@@ -9,7 +9,9 @@ const Header = () => {
   };
   return (
     <header className="main-header" id="Header">
-      <img src="/img/logo.svg" alt="Elvira Meraz Logo" className='data-link logo' data-href="top"/>
+      <a href="#top1" className='data-link'>
+        <img src="/img/logo.svg" alt="Elvira Meraz Logo" className='logo' data-href="top"/>
+      </a>
       <nav className={`main-nav`}>
         <Hamburger active={active} action={ToggleMenuFunction} />
         <Menu active={active}/>

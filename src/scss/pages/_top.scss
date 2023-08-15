@@ -1,8 +1,10 @@
 .Top{
-  margin-bottom: 3em;
+
+  margin-top: var(--header-height);
+
   @include from(lg){
     margin-bottom: get-vw(130px);
-    margin-top: get-vw(15px);
+    margin-top: calc(var(--header-height) + get-vw(15px));
   }
    br{
     @include to(lg){

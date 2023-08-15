@@ -1,4 +1,16 @@
 .main-header{
+  > *{
+    transition: all .2s;
+  }
+  &:not(.fixed) > a{
+    @include to(lg){
+      position: relative;
+      top: 10px;
+      width: auto;
+      height: 80%;
+    }
+  }
+  transition: all .2s;
   height: var(--header-height);
   width: 100%;
   display: flex;
@@ -7,8 +19,15 @@
   padding: 0 1.5em;
   position: relative;
   background-color: var(--body-bg);
+  // background-color: red;
   z-index: 5000;
+  position: fixed;
+  z-index:5000;
+  left: 0;
+  top: 0;
   img{
+    display: block;
+    width: auto;
     height: 80%;
     @include from(lg){
       width: get-vw(230px);

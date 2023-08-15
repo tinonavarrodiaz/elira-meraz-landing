@@ -11,71 +11,57 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="ELVIRA MERAZ, ONE Family, ONE Community, ONE Future"
-    />
-    <meta property="og:title" content="ELVIRA MERAZ" />
-    <meta
-      property="og:description"
-      content="ELVIRA MERAZ, ONE Family, ONE Community, ONE Future"
-    />
-    <meta property="og:url" content="http://elvirafordowney.com/" />
-    <meta property="og:site_name" content="ELVIRA MERAZ" />
-    <meta property="og:image" content="https://i.ibb.co/tLw17qY/elvira2.jpg" />
-    <meta property="og:image:type" content="image/jpg" />
-    <meta property="og:image:width" content="1497" />
-    <meta property="og:image:height" content="967" />
-    <meta property="og:type" content="website" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <link
-      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-      rel="stylesheet"
-      media="(min-width:1024px)"
-    />
-    <title>{title}</title>
-  </head>
+  <meta charset="UTF-8" />
+  <meta
+    name="description"
+    content="ELVIRA MERAZ, ONE Family, ONE Community, ONE Future"
+  />
+  <meta property="og:title" content="ELVIRA MERAZ" />
+  <meta
+    property="og:description"
+    content="ELVIRA MERAZ, ONE Family, ONE Community, ONE Future"
+  />
+  <meta property="og:url" content="http://elvirafordowney.com/" />
+  <meta property="og:site_name" content="ELVIRA MERAZ" />
+  <meta property="og:image" content="https://i.ibb.co/tLw17qY/elvira2.jpg" />
+  <meta property="og:image:type" content="image/jpg" />
+  <meta property="og:image:width" content="1497" />
+  <meta property="og:image:height" content="967" />
+  <meta property="og:type" content="website" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  <link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+    media="(min-width:1024px)"
+  />
+  <title>{title}</title>
+
   <Header client:load />
   <body>
     <slot />
     <Footer />
-  </body>
-
-  <script>
-    const screemWidth = Math.max(
-      document.documentElement.clientWidth || 0,
-      window.innerWidth || 0
-    );
-    const getScrollBarWidth = () =>
-      window.innerWidth -
-      document.documentElement.getBoundingClientRect().width;
-    document.documentElement.style.setProperty(
-      '--screenWidth',
-      `${screemWidth}`
-    );
-    document.documentElement.style.setProperty(
-      '--scrollbarWidth',
-      `${getScrollBarWidth()}px`
-    );
-    //@ts-ignore
-  </script>
-  <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script is: inline>
-    function isMobile() {
-      return (
-        navigator.userAgent.match(/Android/i) ||
-        navigator.userAgent.match(/webOS/i) ||
-        navigator.userAgent.match(/iPhone/i) ||
-        navigator.userAgent.match(/iPod/i) ||
-        navigator.userAgent.match(/iPad/i) ||
-        navigator.userAgent.match(/BlackBerry/i)
+    <script is:inline>
+      const screemWidth = Math.max(
+        document.documentElement.clientWidth || 0,
+        window.innerWidth || 0
       );
-    }
-    if (!isMobile()) {
+      const getScrollBarWidth = () =>
+        window.innerWidth -
+        document.documentElement.getBoundingClientRect().width;
+      document.documentElement.style.setProperty(
+        '--screenWidth',
+        `${screemWidth}`
+      );
+      document.documentElement.style.setProperty(
+        '--scrollbarWidth',
+        `${getScrollBarWidth()}px`
+      );
+    </script>
+    <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script is:inline>
+      // if (!isMobile()) {
       AOS.init({
         startEvent: 'load',
         easing: 'ease-out-back',
@@ -84,66 +70,59 @@ const { title } = Astro.props;
         useClassNames: true,
         // once: true,
       });
-    }
-  </script>
-
-  <script is:inline>
-    const header = document.querySelector('#Header');
-    let headerHeight = header.clientHeight;
-    const toggleMenu = document.querySelector('.toggle-menu');
-    header.addEventListener('click', (e) => {
-      const target = e.target;
-      // headerHeight = header.clientHeight;
-
-      if (target.classList.contains('data-link')) {
-        e.preventDefault();
-        if (target.classList.contains('logo')) {
-          window.scroll({
-            top: 0,
-            left: 0,
-            behavior: 'smooth',
-          });
-        } else {
-          if (toggleMenu) toggleMenu.click();
-          let hashDonate = 0;
-          const targetElement = document.querySelector(`${target.hash}`);
-          console.log(target.hash);
-          if (target.hash === '#donate') hashDonate = 150;
-          if (target.hash === '#support') hashDonate = -100;
-          window.scroll({
-            top: targetElement.offsetTop - headerHeight * 0.25 + hashDonate,
-            left: 0,
-            behavior: 'smooth',
-          });
-        }
-      }
-    });
-    window.addEventListener('scroll', (e) => {
-      const sTop = scrollY;
-      if (sTop >= headerHeight) {
-        header.classList.add('fixed');
-        document.documentElement.style.setProperty(
-          '--header-height',
-          `${headerHeight * 0.4}px`
-        );
-        // console.log(window.matchMedia('(max-width: 1024px)').matches);
-        if (window.matchMedia('(max-width: 1024px)').matches) {
+      // }
+    </script>
+    <script is:inline>
+      header = document.getElementById('Header');
+      let headerHeight = header.clientHeight;
+      const toggleMenu = document.querySelector('.toggle-menu');
+      window.addEventListener('scroll', (e) => {
+        if (scrollY >= 1) {
+          header.classList.add('fixed');
           document.documentElement.style.setProperty(
             '--header-height',
-            `${headerHeight * 0.75}px`
+            `100px`
+          );
+          if (window.matchMedia('(max-width: 1024px)').matches) {
+            document.documentElement.style.setProperty(
+              '--header-height',
+              `75px`
+            );
+          }
+        } else {
+          header.classList.remove('fixed');
+          header.classList.remove('fixed');
+          document.documentElement.style.setProperty(
+            '--header-height',
+            `${headerHeight}px`
           );
         }
-      } else {
-        header.classList.remove('fixed');
-        document.documentElement.style.setProperty(
-          '--header-height',
-          `${headerHeight}px`
-        );
-      }
-    });
-    // document.documentElement.style.setProperty(
-    //   '--hraderHeightComp',
-    //   `${headerHeight * 1.5}px`
-    // );
-  </script>
+      });
+      const $links = [...document.querySelectorAll('.data-link')];
+      const arr = [];
+      // const toggleMenu = document.querySelector('.toggle-menu');
+      $links.map((link) => {
+        const obj = {};
+        const targetElement = document.querySelector(`${link.hash}`);
+        obj[`id`] = link.hash;
+        obj[`scroll`] = targetElement.getBoundingClientRect().y;
+        arr.push(obj);
+        link.addEventListener('click', (e) => {
+          if (toggleMenu) toggleMenu.click();
+          const t = e.target.href ? e.target : e.target.parentElement;
+          e.preventDefault();
+          const index = $links.indexOf(t);
+          const add =
+            arr[index].id === '#donate' || arr[index].id === '#support'
+              ? 270
+              : 250;
+          if (window.matchMedia('(max-width: 1024px)').matches) {
+            scrollTo({ top: arr[index].scroll - 130, behavior: 'smooth' });
+          } else {
+            scrollTo({ top: arr[index].scroll - add, behavior: 'smooth' });
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

@@ -69,3 +69,11 @@ $legacy : true; // Soporte para versiones antiguas
 // Todos los hacks que hayas necesitado para solucionar conflictos
 // o resolver situaciones extremas. Se espera poder mejorarlos luego.
 @import "hacks/hacks";
+
+
+body, html, main{
+  position: static !important;
+  width: 100vw !important;
+  min-width: 100vw !important;
+  max-width: 100vw !important;
+}

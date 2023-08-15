@@ -73,20 +73,20 @@
     aspect-ratio: 1920/80;
   }
 }
-.elvira-separator{
-  aspect-ratio: 1920 / 805;
-  overflow: hidden;
-  position: relative;
-  border-radius: 1.5em 1.5em 0 0;
-  pucture, img{
-    position: absolute;
-    width: 100%;
-    height: auto;
-    top: 50%;
-    left: 0;
-    transform: translateY(-48%);
-  }
-}
+// .elvira-separator{
+//   aspect-ratio: 1920 / 805;
+//   overflow: hidden;
+//   position: relative;
+//   border-radius: 1.5em 1.5em 0 0;
+//   pucture, img{
+//     position: absolute;
+//     width: 100%;
+//     height: auto;
+//     top: 50%;
+//     left: 0;
+//     transform: translateY(-48%);
+//   }
+// }
 .star-grid{
   $stop1: 58.1%;
   $stop2: 70%;
