@@ -11,33 +11,35 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="UTF-8" />
-  <meta
-    name="description"
-    content="ELVIRA MERAZ, ONE Family, ONE Community, ONE Future"
-  />
-  <meta property="og:title" content="ELVIRA MERAZ" />
-  <meta
-    property="og:description"
-    content="ELVIRA MERAZ, ONE Family, ONE Community, ONE Future"
-  />
-  <meta property="og:url" content="http://elvirafordowney.com/" />
-  <meta property="og:site_name" content="ELVIRA MERAZ" />
-  <meta property="og:image" content="https://i.ibb.co/tLw17qY/elvira2.jpg" />
-  <meta property="og:image:type" content="image/jpg" />
-  <meta property="og:image:width" content="1497" />
-  <meta property="og:image:height" content="967" />
-  <meta property="og:type" content="website" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="generator" content={Astro.generator} />
-  <link
-    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-    rel="stylesheet"
-    media="(min-width:1024px)"
-  />
-  <title>{title}</title>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="ELVIRA MERAZ, ONE Family, ONE Community, ONE Future"
+    />
+    <meta property="og:title" content="ELVIRA MERAZ" />
+    <meta
+      property="og:description"
+      content="ELVIRA MERAZ, ONE Family, ONE Community, ONE Future"
+    />
+    <meta property="og:url" content="http://elvirafordowney.com/" />
+    <meta property="og:site_name" content="ELVIRA MERAZ" />
+    <meta property="og:image" content="https://i.ibb.co/tLw17qY/elvira2.jpg" />
+    <meta property="og:image:type" content="image/jpg" />
+    <meta property="og:image:width" content="1497" />
+    <meta property="og:image:height" content="967" />
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+      rel="stylesheet"
+      media="(min-width:1024px)"
+    />
+    <title>{title}</title>
+    <script is:inline src="/js/smooth-scroll.min.js"></script>
+  </head>
   <Header client:load />
   <body>
     <slot />
@@ -98,42 +100,58 @@ const { title } = Astro.props;
           );
         }
       });
-      const $links = [...document.querySelectorAll('.data-link')];
-      const arr = [];
-      // const toggleMenu = document.querySelector('.toggle-menu');
-      $links.map((link) => {
-        const obj = {};
-        const targetElement = document.querySelector(`${link.hash}`);
-        obj[`id`] = link.hash;
-        obj[`scroll`] = targetElement.getBoundingClientRect().y;
-        arr.push(obj);
-        link.addEventListener('click', (e) => {
-          const t = e.target.href ? e.target : e.target.parentElement;
-          e.preventDefault();
-          const index = $links.indexOf(t);
-          if (!e.target.parentElement.classList.contains('Logo')) {
-            if (toggleMenu) toggleMenu.click();
-            const add =
-              arr[index].id === '#donate' || arr[index].id === '#support'
-                ? 270
-                : 250;
-            if (window.matchMedia('(max-width: 1024px)').matches) {
-              scrollTo({ top: arr[index].scroll - 130, behavior: 'smooth' });
-            }
-            if (
-              window.matchMedia('(min-width: 1024px) and (max-width:1500px')
-                .matches
-            ) {
-              scrollTo({ top: arr[index].scroll - 180, behavior: 'smooth' });
-            } else {
-              scrollTo({ top: arr[index].scroll - add, behavior: 'smooth' });
-            }
-          } else {
-            console.log('Logo');
-            scrollTo({ top: 0, behavior: 'smooth' });
-          }
+      var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 1000,
+        speedAsDuration: true,
+        updateURL: true,
+        clip: true,
+        easing: 'linear',
+        header: '.main-header',
+      });
+      const logoImg = document.querySelector('#link-top');
+      logoImg.addEventListener('click', (e) => {
+        scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth',
         });
       });
+      // const $links = [...document.querySelectorAll('.data-link')];
+      // const arr = [];
+      // // const toggleMenu = document.querySelector('.toggle-menu');
+      // $links.map((link) => {
+      //   const obj = {};
+      //   const targetElement = document.querySelector(`${link.hash}`);
+      //   obj[`id`] = link.hash;
+      //   obj[`scroll`] = targetElement.getBoundingClientRect().y;
+      //   arr.push(obj);
+      //   link.addEventListener('click', (e) => {
+      //     const t = e.target.href ? e.target : e.target.parentElement;
+      //     e.preventDefault();
+      //     const index = $links.indexOf(t);
+      //     if (!e.target.parentElement.classList.contains('Logo')) {
+      //       if (toggleMenu) toggleMenu.click();
+      //       const add =
+      //         arr[index].id === '#donate' || arr[index].id === '#support'
+      //           ? 270
+      //           : 250;
+      //       if (window.matchMedia('(max-width: 1024px)').matches) {
+      //         scrollTo({ top: arr[index].scroll - 130, behavior: 'smooth' });
+      //       }
+      //       if (
+      //         window.matchMedia('(min-width: 1024px) and (max-width:1500px')
+      //           .matches
+      //       ) {
+      //         scrollTo({ top: arr[index].scroll - 180, behavior: 'smooth' });
+      //       } else {
+      //         scrollTo({ top: arr[index].scroll - add, behavior: 'smooth' });
+      //       }
+      //     } else {
+      //       console.log('Logo');
+      //       scrollTo({ top: 0, behavior: 'smooth' });
+      //     }
+      //   });
+      // });
     </script>
   </body>
 </html>
