@@ -9,7 +9,7 @@ const Header = () => {
   };
   return (
     <header className="main-header" id="Header">
-      <a href="#top1" className='data-link'>
+      <a href="#top1" className='data-link Logo'>
         <img src="/img/logo.svg" alt="Elvira Meraz Logo" className='logo' data-href="top"/>
       </a>
       <nav className={`main-nav`}>

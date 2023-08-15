@@ -108,18 +108,29 @@ const { title } = Astro.props;
         obj[`scroll`] = targetElement.getBoundingClientRect().y;
         arr.push(obj);
         link.addEventListener('click', (e) => {
-          if (toggleMenu) toggleMenu.click();
           const t = e.target.href ? e.target : e.target.parentElement;
           e.preventDefault();
           const index = $links.indexOf(t);
-          const add =
-            arr[index].id === '#donate' || arr[index].id === '#support'
-              ? 270
-              : 250;
-          if (window.matchMedia('(max-width: 1024px)').matches) {
-            scrollTo({ top: arr[index].scroll - 130, behavior: 'smooth' });
+          if (!e.target.parentElement.classList.contains('Logo')) {
+            if (toggleMenu) toggleMenu.click();
+            const add =
+              arr[index].id === '#donate' || arr[index].id === '#support'
+                ? 270
+                : 250;
+            if (window.matchMedia('(max-width: 1024px)').matches) {
+              scrollTo({ top: arr[index].scroll - 130, behavior: 'smooth' });
+            }
+            if (
+              window.matchMedia('(min-width: 1024px) and (max-width:1500px')
+                .matches
+            ) {
+              scrollTo({ top: arr[index].scroll - 180, behavior: 'smooth' });
+            } else {
+              scrollTo({ top: arr[index].scroll - add, behavior: 'smooth' });
+            }
           } else {
-            scrollTo({ top: arr[index].scroll - add, behavior: 'smooth' });
+            console.log('Logo');
+            scrollTo({ top: 0, behavior: 'smooth' });
           }
         });
       });
