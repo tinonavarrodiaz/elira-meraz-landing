@@ -48,6 +48,17 @@
     }
   }
 }
+@include to(lg){
+  .Donate{
+    &__img{
+      border-radius: 0;
+
+    }
+    &__content{
+      top:50%;
+    }
+  }
+}
 // .Donate{
 //   width: 90%;
 //   max-width: get-vw(1560px);
